@@ -10,6 +10,7 @@ A scalable **job scheduling service** built with **NestJS** and **PostgreSQL**. 
 - ✅ **Persistence with PostgreSQL** – Stores jobs and execution history.
 - ✅ **Retries & Failure Handling** – Ensures jobs execute reliably.
 - ✅ **Scalable Architecture** – Designed to support high-throughput workloads.
+- ✅ **Optimized with Redis Caching** – Reduces database load and improves performance.
 - ✅ **Unit & E2E Testing** – Fully tested with Jest.
 - ✅ **API Documentation with Swagger** – Interactive API documentation.
 
@@ -22,7 +23,7 @@ A scalable **job scheduling service** built with **NestJS** and **PostgreSQL**. 
 - **Testing**: [Jest](https://jestjs.io/)
 - **API Documentation**: [Swagger](https://swagger.io/)
 - **Containerization**: Docker (optional)
-
+- **Caching**: Redis
 ---
 
 ## 🛠️ Installation & Setup
@@ -32,7 +33,7 @@ Ensure you have the following installed:
 - [Node.js](https://nodejs.org/) (>= 16.x)
 - [PostgreSQL](https://www.postgresql.org/) (>= 12.x)
 - [Docker](https://www.docker.com/) (optional)
-
+- Redis (>= 6.x)
 ### **Clone the Repository**
 ```bash
 git clone https://github.com/your-username/scheduler-microservice.git
@@ -160,19 +161,31 @@ mau deploy
 
 For a full list of API endpoints, check **Swagger** documentation at `http://localhost:3000/api`.
 
----
+--
 
-## 🤝 Contributing
 
-Contributions are welcome! Follow these steps:
+docker-compose up --build
 
-1. **Fork the Repository**  
-2. **Create a New Branch** (`feature/my-new-feature`)  
-3. **Commit Your Changes**  
-4. **Push to Your Fork**  
-5. **Open a Pull Request**  
+🚀 Performance Optimization with Redis Caching
 
----
+This microservice uses Redis caching to reduce database queries and improve response times. Caching is implemented in the JobService, storing frequently accessed job data for 60 seconds to optimize performance.
+
+Benefits of Redis Caching
+
+⚡ Faster API responses by reducing direct database queries.
+
+🚀 Improved scalability for handling high request loads.
+
+💾 Optimized database performance by caching frequently accessed job data.
+
+How Caching Works?
+
+When fetching job details, the service first checks Redis.
+
+If cached data is found, it returns the cached response.
+
+If not, it fetches from PostgreSQL and stores the result in Redis.
+--
 
 ## 🔗 Resources
 
