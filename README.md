@@ -1,5 +1,4 @@
 
-```markdown
 # 🕒 Scheduler Microservice
 
 A scalable **job scheduling service** built with **NestJS** and **PostgreSQL**. This service provides an API for scheduling and managing jobs without relying on third-party scheduling libraries.
@@ -108,6 +107,7 @@ async function bootstrap() {
 }
 bootstrap();
 ```
+<img width="1440" alt="Screenshot 2025-02-13 at 11 30 20 PM" src="https://github.com/user-attachments/assets/6fe1a658-086f-4acc-ac6b-b6dd6fe1be74" />
 
 ---
 
@@ -115,7 +115,7 @@ bootstrap();
 
 ### **Run Unit Tests**
 ```bash
-npm run test
+npm run test:job
 ```
 
 ### **Run E2E (End-to-End) Tests**
@@ -160,6 +160,7 @@ mau deploy
 | DELETE | `/jobs/:id`            | Delete a job                   |
 
 For a full list of API endpoints, check **Swagger** documentation at `http://localhost:3000/api`.
+<img width="705" alt="Screenshot 2025-02-13 at 11 42 46 PM" src="https://github.com/user-attachments/assets/a309dd84-4da3-4549-9673-6e54d8a762d4" />
 
 --
 
@@ -200,22 +201,3 @@ If not, it fetches from PostgreSQL and stores the result in Redis.
 ## 📜 License
 
 This project is **MIT licensed**. See the full license [here](https://github.com/nestjs/nest/blob/master/LICENSE).
-
-```
-
----
-
-### ✅ **This README.md file includes:**
-1. **Introduction to the project**.
-2. **Core features**.
-3. **Technology stack**.
-4. **Installation & setup** (including **Docker**).
-5. **API documentation with Swagger**.
-6. **How to run tests**.
-7. **Deployment methods**.
-8. **API endpoints list**.
-9. **Contribution guidelines**.
-10. **Useful resources**.
-11. **License information**.
-
-🚀 **Now it's ready to be pushed to your GitHub repository!**
