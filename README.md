@@ -160,32 +160,36 @@ mau deploy
 | DELETE | `/jobs/:id`            | Delete a job                   |
 
 For a full list of API endpoints, check **Swagger** documentation at `http://localhost:3000/api`.
-<img width="705" alt="Screenshot 2025-02-13 at 11 42 46 PM" src="https://github.com/user-attachments/assets/a309dd84-4da3-4549-9673-6e54d8a762d4" />
+
+<img width="722" alt="Screenshot 2025-02-13 at 11 44 13 PM" src="https://github.com/user-attachments/assets/765700d0-a10d-40b3-ae5e-898aa02144b6" />
+<img width="718" alt="Screenshot 2025-02-13 at 11 43 32 PM" src="https://github.com/user-attachments/assets/cc49337b-cc64-4f52-a4a8-8fad1b37043a" />
+<img width="705" alt="Screenshot 2025-02-13 at 11 42 46 PM" src="https://github.com/user-attachments/assets/290985d7-b4c1-4757-96ff-d686e0444ec9" />
+
+
+
 
 --
 
 
-docker-compose up --build
-
-🚀 Performance Optimization with Redis Caching
+## 🚀 Performance Optimization with Redis Caching
 
 This microservice uses Redis caching to reduce database queries and improve response times. Caching is implemented in the JobService, storing frequently accessed job data for 60 seconds to optimize performance.
 
-Benefits of Redis Caching
+### Benefits of Redis Caching
 
-⚡ Faster API responses by reducing direct database queries.
+- ⚡ Faster API responses by reducing direct database queries.
 
-🚀 Improved scalability for handling high request loads.
+- 🚀 Improved scalability for handling high request loads.
 
-💾 Optimized database performance by caching frequently accessed job data.
+- 💾 Optimized database performance by caching frequently accessed job data.
 
-How Caching Works?
+### How Caching Works?
 
-When fetching job details, the service first checks Redis.
+1. When fetching job details, the service first checks Redis.
 
-If cached data is found, it returns the cached response.
+2. If cached data is found, it returns the cached response.
 
-If not, it fetches from PostgreSQL and stores the result in Redis.
+3. If not, it fetches from PostgreSQL and stores the result in Redis.
 --
 
 ## 🔗 Resources
